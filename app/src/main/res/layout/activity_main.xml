@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#FF0000"
+        app:layout_constraintBottom_toTopOf="@+id/GridLayoutParent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <GridLayout
+        android:id="@+id/GridLayoutParent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:padding="5dp"
         android:rowCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <GridLayout
+            android:id="@+id/gridLayoutA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -70,6 +83,7 @@
         </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayoutB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -122,6 +136,7 @@
         </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayoutC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -174,6 +189,8 @@
         </GridLayout>
 
         <GridLayout
+
+            android:id="@+id/gridLayoutD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -226,6 +243,7 @@
         </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayoutE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -278,6 +296,7 @@
         </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayoutF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -330,6 +349,7 @@
         </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayoutG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -381,59 +401,9 @@
                 android:layout_height="35dp" />
         </GridLayout>
 
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:padding="5dp">
-
-            <Button
-                android:id="@+id/buttonK00"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK01"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK02"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK10"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK11"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK12"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK20"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK21"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-
-            <Button
-                android:id="@+id/buttonK22"
-                android:layout_width="35dp"
-                android:layout_height="35dp" />
-        </GridLayout>
 
         <GridLayout
+            android:id="@+id/gridLayoutH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="3"
@@ -484,6 +454,59 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp" />
         </GridLayout>
+
+        <GridLayout
+            android:id="@+id/gridLayoutI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonI00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonI22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
     </GridLayout>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
