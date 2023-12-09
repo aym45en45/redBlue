@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:padding="5dp"
+        android:rowCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonA00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonA22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonB00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonB22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonC00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonC22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonD00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonD22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonE00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonE22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonF00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonF22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonG00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonG22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonK00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonK22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/buttonH00"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH01"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH02"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH10"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH11"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH12"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH20"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH21"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/buttonH22"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+        </GridLayout>
+    </GridLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
