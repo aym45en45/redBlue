@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         View VV = gridLayout.getChildAt(i);
                         if (VV instanceof Button) {
                             Button button = (Button) VV;
-                            button.setBackgroundColor(getResources().getColor(R.color.white));
+                            button.setBackgroundColor(getResources().getColor(R.color.defualt));
                         }
                     }
                 }
