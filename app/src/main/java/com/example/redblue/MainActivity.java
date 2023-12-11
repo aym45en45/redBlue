@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -66,21 +67,40 @@ public class MainActivity extends AppCompatActivity {
 
                     for (int i = 0; i < gridLayout.getChildCount(); i++) {
                         View VV = gridLayout.getChildAt(i);
-                        if (VV instanceof Button) {
-                            Button button = (Button) VV;
+                        if (VV instanceof LinearLayout) {
+                            LinearLayout linearLayout = (LinearLayout) VV;
+
+                            // Assuming the Button is always at index 1 in the LinearLayout
+                            View childView = linearLayout.getChildAt(1);
+
+                            Button button;
+                            if (childView instanceof Button) {
+                                button = (Button) childView;
+                                // Now you have access to the Button
+                            }
                             button.setBackgroundColor(getResources().getColor(R.color.defualt));
                         }
                     }
                 }
-            }
-        });
-    }
+            });
+        }
 
-    private void setButtonClickListener(GridLayout gridLayout, int gridLayoutId, Tab[] tabArray) {
-        for (int i = 0; i < gridLayout.getChildCount(); i++) {
-            View view = gridLayout.getChildAt(i);
-            if (view instanceof Button) {
-                Button button = (Button) view;
+        private void setButtonClickListener (GridLayout gridLayout,int gridLayoutId, Tab[] tabArray)
+        {
+            for (int i = 0; i < gridLayout.getChildCount(); i++) {
+                View view = gridLayout.getChildAt(i);
+                Button button;
+                if (view instanceof LinearLayout) {
+                    LinearLayout linearLayout = (LinearLayout) view;
+
+                    // Assuming the Button is always at index 1 in the LinearLayout
+                    View childView = linearLayout.getChildAt(1);
+
+                    if (childView instanceof Button) {
+                        button = (Button) childView;
+                        // Now you have access to the Button
+                    }
+                }
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
