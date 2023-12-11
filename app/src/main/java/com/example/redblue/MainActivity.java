@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
     int Player;
     boolean setPlayer;
     View vi;
-    View vW;
     View GP;
-    int[] gridLayoutIds;
-    Tab[] tabArray;
+    int[][] gridLayoutIds;
+    Board[][] boardA;
+    private int originalColor;
 
 
     @Override
@@ -24,51 +24,53 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabArray = new Tab[9];
-        for (int i = 0; i < tabArray.length; i++) {
-            tabArray[i] = new Tab();
+        boardA = new Board[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                boardA[i][j] = new Board();
+            }
         }
         GP = findViewById(R.id.GridLayoutParent);
         vi = findViewById(R.id.view);
-        vW = findViewById(R.id.viewWin);
-        gridLayoutIds = new int[]{
-                R.id.gridLayoutA,
-                R.id.gridLayoutB,
-                R.id.gridLayoutC,
-                R.id.gridLayoutD,
-                R.id.gridLayoutE,
-                R.id.gridLayoutF,
-                R.id.gridLayoutG,
-                R.id.gridLayoutH,
-                R.id.gridLayoutI
+        gridLayoutIds = new int[][]{
+                {R.id.gridLayoutA, R.id.gridLayoutB, R.id.gridLayoutC},
+                {R.id.gridLayoutD, R.id.gridLayoutE, R.id.gridLayoutF},
+                {R.id.gridLayoutG, R.id.gridLayoutH, R.id.gridLayoutI}
         };
-        int i = 0;
-        for (int id : gridLayoutIds) {
-            GridLayout gridLayout = findViewById(id);
-            setButtonClickListener(gridLayout, i, tabArray);
-            i++;
+        for (int row = 0; row < gridLayoutIds.length; row++) {
+            for (int col = 0; col < gridLayoutIds[row].length; col++) {
+                int id = gridLayoutIds[row][col];
+                GridLayout gridLayout = findViewById(id);
+                setButtonClickListener(gridLayout, row, col, boardA);
+            }
         }
         Button PlayAgian = findViewById(R.id.Play);
         PlayAgian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GP.setVisibility(View.VISIBLE);
-                vW.setVisibility(View.GONE);
+                GP.setBackgroundColor(Color.TRANSPARENT);
+                for (int row = 0; row < gridLayoutIds.length; row++) {
+                    for (int col = 0; col < gridLayoutIds[row].length; col++) {
+                        int id = gridLayoutIds[row][col];
+                        GridLayout gridLayout = findViewById(id);
+                        gridLayout.setVisibility(View.VISIBLE);
+                    }
+                }
                 for (int i = 0; i < 9; i++) {
                     for (int j = 0; j < 3; j++) {
                         for (int k = 0; k < 3; k++) {
-                            tabArray[i].board[j][k] = 0;
-
+                            for (int l = 0; l < 3; l++) {
+                                boardA[i][j].board[k][l] = 0;
+                            }
                         }
                     }
                 }
-                for (int id : gridLayoutIds) {
-                    GridLayout gridLayout = findViewById(id);
-
-                    for (int i = 0; i < gridLayout.getChildCount(); i++) {
-                        View VV = gridLayout.getChildAt(i);
-                        if (VV instanceof LinearLayout) {
-                            Button button = (Button) VV;
+                for (int row = 0; row < gridLayoutIds.length; row++) {
+                    for (int col = 0; col < gridLayoutIds[row].length; col++) {
+                        int id = gridLayoutIds[row][col];
+                        GridLayout gridLayout = findViewById(id);
+                        for (int i = 0; i < gridLayout.getChildCount(); i++) {
+                            Button button = (Button) gridLayout.getChildAt(i);
                             button.setBackgroundColor(getResources().getColor(R.color.defualt));
                         }
                     }
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setButtonClickListener(GridLayout gridLayout, int gridLayoutId, Tab[] tabArray) {
+    private void setButtonClickListener(GridLayout gridLayout, int rowA, int colA, Board[][] boardA) {
         for (int i = 0; i < gridLayout.getChildCount(); i++) {
             View view = gridLayout.getChildAt(i);
             if (view instanceof Button) {
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                         int row = index / gridLayout.getColumnCount();
                         int col = index % gridLayout.getColumnCount();
                         setPlayer();
-                        setColor(button, gridLayoutId, row, col, tabArray);
+                        setColor(button, rowA, colA, row, col, boardA);
                     }
                 });
             }
@@ -104,33 +106,41 @@ public class MainActivity extends AppCompatActivity {
             Player = -1;
     }
 
-    private void setColor(Button button, int index, int row, int col, Tab[] tabArray) {
-        tabArray[index].board[row][col] = Player;
+    private void setColor(Button button, int rowA, int colA, int row, int col, Board[][] boardA) {
+        boardA[rowA][colA].board[row][col] = Player;
         if (Player == 1) {
-            if (tabArray[index].checkWin() == Player) {
-                GP.setVisibility(View.GONE);
-                vW.setVisibility(View.VISIBLE);
-                vW.setBackgroundColor(getResources().getColor(R.color.redLight));
+            button.setBackgroundColor(getResources().getColor(R.color.redLight));
+            if (boardA[rowA][colA].checkWin() == Player) {
+                int id = gridLayoutIds[row][col];
+                GridLayout gridLayout = findViewById(id);
+                gridLayout.setBackgroundColor(getResources().getColor(R.color.redLight));
+                for (int i = 0; i < gridLayout.getChildCount(); i++) {
+                    Button buttonA = (Button) gridLayout.getChildAt(i);
+                    buttonA.setVisibility(View.GONE);
+                }
                 return;
             }
             vi.setBackgroundColor(getResources().getColor(R.color.blueBright));
-            button.setBackgroundColor(getResources().getColor(R.color.redLight));
-        } else {
-            if (tabArray[index].checkWin() == Player) {
-                GP.setVisibility(View.GONE);
-                vW.setVisibility(View.VISIBLE);
-                vW.setBackgroundColor(getResources().getColor(R.color.blueBright));
+        } else if (Player == -1){
+            button.setBackgroundColor(getResources().getColor(R.color.blueBright));
+            if (boardA[rowA][colA].checkWin() == Player) {
+                int id = gridLayoutIds[row][col];
+                GridLayout gridLayout = findViewById(id);
+                gridLayout.setBackgroundColor(getResources().getColor(R.color.blueBright));
+                for (int i = 0; i < gridLayout.getChildCount(); i++) {
+                    Button buttonA = (Button) gridLayout.getChildAt(i);
+                    buttonA.setVisibility(View.GONE);
+                }
                 return;
             }
             vi.setBackgroundColor(getResources().getColor(R.color.redLight));
-            button.setBackgroundColor(getResources().getColor(R.color.blueBright));
         }
     }
 
-    class Tab {
+    class Board {
         int[][] board;
 
-        public Tab() {
+        public Board() {
             this.board = new int[3][3];
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {

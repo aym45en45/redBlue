@@ -15,21 +15,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <View
-        android:id="@+id/viewWin"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="#FF0000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
 
     <GridLayout
         android:id="@+id/GridLayoutParent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:columnCount="3"
         android:padding="5dp"
         android:rowCount="2"
@@ -41,8 +31,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -94,8 +84,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -147,8 +137,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -199,10 +189,9 @@
         </GridLayout>
 
         <GridLayout
-
             android:id="@+id/gridLayoutD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -254,8 +243,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -307,8 +296,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -360,8 +349,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutG"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -414,8 +403,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutH"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
@@ -467,8 +456,8 @@
 
         <GridLayout
             android:id="@+id/gridLayoutI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:columnCount="3"
             android:padding="5dp">
 
