@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         gridLayout.setVisibility(View.VISIBLE);
                     }
                 }
-                for (int i = 0; i < 9; i++) {
+                for (int i = 0; i < 3; i++) {
                     for (int j = 0; j < 3; j++) {
                         for (int k = 0; k < 3; k++) {
                             for (int l = 0; l < 3; l++) {
@@ -111,25 +111,52 @@ public class MainActivity extends AppCompatActivity {
         if (Player == 1) {
             button.setBackgroundColor(getResources().getColor(R.color.redLight));
             if (boardA[rowA][colA].checkWin() == Player) {
-                int id = gridLayoutIds[row][col];
+                int id = gridLayoutIds[rowA][colA];
                 GridLayout gridLayout = findViewById(id);
                 gridLayout.setBackgroundColor(getResources().getColor(R.color.redLight));
                 for (int i = 0; i < gridLayout.getChildCount(); i++) {
                     Button buttonA = (Button) gridLayout.getChildAt(i);
                     buttonA.setVisibility(View.GONE);
                 }
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (boardA[i][j].board[rowA][colA] == 0) {
+                            boardA[i][j].board[rowA][colA]=Player;
+                            id = gridLayoutIds[i][j];
+                            gridLayout = findViewById(id);
+                            int numColumns = gridLayout.getColumnCount();
+                            int index = rowA * numColumns + colA;
+                            Button buttonA = (Button) gridLayout.getChildAt(index);
+                            buttonA.setBackgroundColor(getResources().getColor(R.color.redLight));
+                        }
+                    }
+                }
                 return;
             }
             vi.setBackgroundColor(getResources().getColor(R.color.blueBright));
-        } else if (Player == -1){
+        } else if (Player == -1) {
             button.setBackgroundColor(getResources().getColor(R.color.blueBright));
             if (boardA[rowA][colA].checkWin() == Player) {
-                int id = gridLayoutIds[row][col];
+                int id = gridLayoutIds[rowA][colA];
                 GridLayout gridLayout = findViewById(id);
                 gridLayout.setBackgroundColor(getResources().getColor(R.color.blueBright));
                 for (int i = 0; i < gridLayout.getChildCount(); i++) {
                     Button buttonA = (Button) gridLayout.getChildAt(i);
                     buttonA.setVisibility(View.GONE);
+                }
+
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (boardA[i][j].board[rowA][colA] == 0) {
+                            boardA[i][j].board[rowA][colA]=Player;
+                            id = gridLayoutIds[i][j];
+                            gridLayout = findViewById(id);
+                            int numColumns = gridLayout.getColumnCount();
+                            int index = rowA * numColumns + colA;
+                            Button buttonA = (Button) gridLayout.getChildAt(index);
+                            buttonA.setBackgroundColor(getResources().getColor(R.color.blueBright));
+                        }
+                    }
                 }
                 return;
             }
