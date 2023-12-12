@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -143,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+            setBoard(row, col);
         } else if (Player == -1) {
             button.setBackgroundColor(getResources().getColor(R.color.blueBright));
             button.setEnabled(false);
@@ -168,6 +168,47 @@ public class MainActivity extends AppCompatActivity {
                                     Button buttonA = (Button) gridLayout.getChildAt(index);
                                     setColor(buttonA, r, c, row, col, boardA);
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+            setBoard(row, col);
+        }
+    }
+
+    private void setBoard(int row, int col) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i == row && j == col) {
+                    int id = gridLayoutIds[i][j];
+                    GridLayout gridLayout = findViewById(id);
+                    for (int k = 0; k < 3; k++) {
+                        for (int h = 0; h < 3; h++) {
+                            if (boardA[i][j].board[k][h] == 0) {
+                                id = gridLayoutIds[i][j];
+                                gridLayout = findViewById(id);
+                                int numColumns = gridLayout.getColumnCount();
+                                int index = k * numColumns + h;
+                                Button buttonA = (Button) gridLayout.getChildAt(index);
+                                buttonA.setBackgroundColor(getResources().getColor(R.color.defualt));
+                                buttonA.setEnabled(true);
+                            }
+                        }
+                    }
+                } else {
+                    int id = gridLayoutIds[i][j];
+                    GridLayout gridLayout = findViewById(id);
+                    for (int k = 0; k < 3; k++) {
+                        for (int h = 0; h < 3; h++) {
+                            if (boardA[i][j].board[k][h] == 0) {
+                                id = gridLayoutIds[i][j];
+                                gridLayout = findViewById(id);
+                                int numColumns = gridLayout.getColumnCount();
+                                int index = k * numColumns + h;
+                                Button buttonA = (Button) gridLayout.getChildAt(index);
+                                buttonA.setBackgroundColor(getResources().getColor(R.color.black));
+                                buttonA.setEnabled(false);
                             }
                         }
                     }
