@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="defualt">#a692cb</color>
     <color name="redLight">#DB1507</color>
+    <color name="green">#009688</color>
     <color name="blueBright">#FF0000FF</color>
 
 </resources>
